@@ -10,7 +10,7 @@ const elementsFoto = {
     loadMoreBtn: document.querySelector('.load-more'),
   };
 
-  
+
 const axionsResponse = async () => {
     try {
       const axiosGet = await axios.get(
@@ -25,7 +25,7 @@ const axionsResponse = async () => {
               page: this.currentPage,
             },
           });
-  );
+  
       console.log(axiosGet.data.hits);
     } catch (error) {
       console.log(error);
