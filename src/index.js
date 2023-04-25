@@ -10,7 +10,13 @@ const elementsFoto = {
     loadMoreBtn: document.querySelector('.load-more'),
   };
 
-
+constructor(){
+  this.lastSearch='';
+  this.perPage=40;
+  this.isNewSearch=false;
+  this.currentPage=1;
+  this.isEndOfPages=false;
+}
 const axionsResponse = async () => {
     try {
       const axiosGet = await axios.get(
@@ -32,4 +38,10 @@ const axionsResponse = async () => {
     }
   };
   axionsResponse();
+this.lastSearch=query;
+this.isEndOfPages=this.perPage*this.currentPage>= axionsResponse.data.totalHits;
+this.currentPage+=1;
+  
+  return axionsResponse;
+}
 
