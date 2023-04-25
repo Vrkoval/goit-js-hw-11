@@ -8,7 +8,7 @@ const elementsFoto = {
     submitBtn: document.querySelector('button'),
     gallery: document.querySelector('.gallery'),
     loadMoreBtn: document.querySelector('.load-more'),
-  };
+}
 
 constructor(){
   this.lastSearch='';
@@ -43,5 +43,5 @@ this.isEndOfPages=this.perPage*this.currentPage>= axionsResponse.data.totalHits;
 this.currentPage+=1;
   
   return axionsResponse;
-}
 
+}
