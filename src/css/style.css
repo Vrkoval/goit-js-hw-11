@@ -1,0 +1,27 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+}
+.hidden{
+    position: absolute;
+    margin: -1px;
+    padding: 0;
+    width: 1px;
+    height: 1px;
+    border: 0;
+    overflow: hidden;
+}
+a{
+    text-decoration: none;
+}
+.search-form{
+    position: fixed;
+    width: 100%;
+    z-index: auto;
+    padding: 20px, 0, 20px, 0;
+    text-align: center;
+    background-position: top center;
+    background-image: url(../images/);
+}
