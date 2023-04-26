@@ -39,10 +39,10 @@ const markup = {
 const elementsFoto = {
     form: document.querySelector('.search-form'),
     input: document.querySelector('input[name="searchQuery"]'),
-    divider:document.querySelector('.dvider'),
-    submitBtn: document.querySelector('button'),
+    divider:document.querySelector('.divider'),
+    button: document.querySelector('.search-form button'),
     gallery: document.querySelector('.gallery'),
-    loadMoreBtn: document.querySelector('.load-more'),
+    spinner: document.querySelector('.spinner'),
 }
 let query='';
 const api=new findApi();
