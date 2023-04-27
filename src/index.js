@@ -84,11 +84,11 @@ const response = await axios.get(
        
   // axionsResponse();
   this.lastSearch=query;
-this.isEndOfPages=this.perPage*this.currentPage>= axionsResponse.data.totalHits;
+this.isEndOfPages=this.perPage*this.currentPage>= response.data.totalHits;
 this.currentPage+=1;
   
   return response;
-        };       
+                     
   Notify.init({ showOnlyTheLastOne: true, clickToClose: true });
   elementsFoto.form.addEventListener('submit', onSubmit);
   
@@ -140,5 +140,5 @@ this.currentPage+=1;
         if (!api.isEndOfPages) renderPage();
         else Notify.warning("We're sorry, but you've reached the end of search results.");
       }
-    });
+    })
   }
