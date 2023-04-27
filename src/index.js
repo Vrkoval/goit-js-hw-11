@@ -2,6 +2,7 @@ import Notiflix from 'notiflix';
 import axios from 'axios';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
+import findApi from './js/pixabay-api';
 
 const markup = {
   
@@ -44,33 +45,12 @@ const elementsFoto = {
     gallery: document.querySelector('.gallery'),
     spinner: document.querySelector('.spinner'),
 }
-let query='';
-const api=new findApi();
-class findApi {
-  #OUR_URL='https://pixabay.com/api/';
-  #kEY_API='35660252-a6a2123775fa2a75b6944ac36';
-  constructor(){
-      this.lastSearch='';
-      this.perPage=40;
-      this.isNewSearch=false;
-      this.currentPage=1;
-      this.isEndOfPages=false;
-}
 
-
-async getData(query){
-  if (query!==this.lastSearch){
-    this.isNewSearch=true;
-    this.currentPage = 1;
-  }
-  else{
-    this.isNewSearch = false;
-  }
 
 const response = await axios.get(
-        this.#OUR_URL, {
+        this.OUR_URL, {
             params: {
-              key: this.#kEY_API,
+              key: this.KEY_API,
               q: query,
               image_type: 'photo',
               orientation: 'horizontal',
@@ -82,13 +62,13 @@ const response = await axios.get(
   
       // console.log(axiosGet.data.hits);
        
-  // axionsResponse();
+ 
   this.lastSearch=query;
-this.isEndOfPages=this.perPage*this.currentPage>= axionsResponse.data.totalHits;
+this.isEndOfPages=this.perPage*this.currentPage>= response.data.totalHits;
 this.currentPage+=1;
   
   return response;
-        };       
+                   
   Notify.init({ showOnlyTheLastOne: true, clickToClose: true });
   elementsFoto.form.addEventListener('submit', onSubmit);
   
@@ -99,7 +79,7 @@ this.currentPage+=1;
   
     elementsFoto.button.disabled = true;
     clearPage();
-    await renderPage();
+    // await renderPage();
     elementsFoto.button.disabled = false;
   }
   
