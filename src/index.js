@@ -44,6 +44,12 @@ const elementsFoto = {
     gallery: document.querySelector('.gallery'),
     spinner: document.querySelector('.spinner'),
 }
+const slider = new SimpleLightbox('.slide-wrapper', {
+  overlayOpacity: 0.9,
+  showCounter: false,
+  captionsData: 'alt',
+  captionDelay: 150,
+});
 let query='';
 const api=new findApi();
 class findApi {
