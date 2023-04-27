@@ -9,7 +9,7 @@ export default class findApi {
             this.page = 1;    
         }
         
-        fetchPhotoCard() {
+        getData() {
             const URL = `${OUR_URL}?key=${KEY_API}&q=${this.query}&
             image_type=photo&orientation=horizontal&
             safesearch=true&per_page=40&page=${this.page}`;
