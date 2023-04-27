@@ -67,7 +67,7 @@ async getData(query){
     this.isNewSearch = false;
   }
 }
-const axionsResponse = async () => {
+const response = async () => {
     try {
       const axiosGet = await axios.get(
         this.#OUR_URL, {
@@ -92,7 +92,7 @@ const axionsResponse = async () => {
 this.isEndOfPages=this.perPage*this.currentPage>= axionsResponse.data.totalHits;
 this.currentPage+=1;
   
-  return axionsResponse;
+  return response;
   Notify.init({ showOnlyTheLastOne: true, clickToClose: true });
   elementsFoto.form.addEventListener('submit', onSubmit);
   
