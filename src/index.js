@@ -66,10 +66,8 @@ async getData(query){
   else{
     this.isNewSearch = false;
   }
-}
-const response = async () => {
-    try {
-      const axiosGet = await axios.get(
+
+const response = await axios.get(
         this.#OUR_URL, {
             params: {
               key: this.#kEY_API,
@@ -83,16 +81,14 @@ const response = async () => {
           });
   
       // console.log(axiosGet.data.hits);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+       
   // axionsResponse();
   this.lastSearch=query;
 this.isEndOfPages=this.perPage*this.currentPage>= axionsResponse.data.totalHits;
 this.currentPage+=1;
   
   return response;
+        };       
   Notify.init({ showOnlyTheLastOne: true, clickToClose: true });
   elementsFoto.form.addEventListener('submit', onSubmit);
   
