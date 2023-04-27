@@ -48,7 +48,7 @@ let query='';
 const api=new findApi();
 class findApi {
   #OUR_URL='https://pixabay.com/api/';
-  #kEY_API='35660252-a6a2123775fa2a75b6944ac36';
+  #KEY_API='35660252-a6a2123775fa2a75b6944ac36';
   constructor(){
       this.lastSearch='';
       this.perPage=40;
@@ -70,7 +70,7 @@ async getData(query){
 const response = await axios.get(
         this.#OUR_URL, {
             params: {
-              key: this.#kEY_API,
+              key: this.#KEY_API,
               q: query,
               image_type: 'photo',
               orientation: 'horizontal',
