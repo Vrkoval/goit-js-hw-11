@@ -12,7 +12,7 @@ const loadMoreBtn = document.querySelector(".load-more");
 form.addEventListener("submit", submitForm);
 loadMoreBtn.addEventListener("click", onLoadMore);
 
-const getFotoApi = new getFotoApi();
+const toGetFotoApi = new getFotoApi();
 
 let lightbox = new SimpleLightbox(".gallery a", {
     captionsData: "alt",
@@ -26,17 +26,17 @@ async function submitForm(e) {
     e.preventDefault();
 
     clearImagesGallery();
-    const searchQuery = getFotoApi.query = e.currentTarget.elements.searchQuery.value.trim()
+    const searchQuery = toGetFotoApi.query = e.currentTarget.elements.searchQuery.value.trim()
     if (!searchQuery) {
         enterWithoutRequest();
         return;
     }
 
-    // getFotoApi.resetPage()
+    toGetFotoApi.resetPage()
     try {
-        const response = await getFotoApi.fetchFoto(searchQuery);
+        const response = await toGetFotoApi.fetchFoto(searchQuery);
         const totalHits = response.totalHits;
-        totalImages += getFotoApi.per_page;
+        totalImages += toGetFotoApi.per_page;
 
         if (response.hits.length === 0) {
             errorMessage();
@@ -58,7 +58,7 @@ async function submitForm(e) {
 
         loadMoreBtn.classList.remove("is-hidden");
 
-        if (response.hits.length < getFotoApi.per_page) {
+        if (response.hits.length < toGetFotoApi.per_page) {
             loadMoreBtn.classList.add("is-hidden")
         }
 
@@ -70,8 +70,8 @@ async function submitForm(e) {
 
 async function onLoadMore(searchQuery) {
     try {
-        const response = await getFotoApi.fetchImages(searchQuery);
-        totalImages += getFotoApi.per_page;
+        const response = await toGetFotoApi.fetchImages(searchQuery);
+        totalImages += toGetFotoApi.per_page;
 
         if (totalImages >= response.totalHits) {
             renderFoto(response.hits)
