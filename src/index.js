@@ -32,9 +32,9 @@ async function submitForm(e) {
         return;
     }
 
-    getFotoApi.resetPage()
+    // getFotoApi.resetPage()
     try {
-        const response = await getFotoApi.fetchImages(searchQuery);
+        const response = await getFotoApi.fetchFoto(searchQuery);
         const totalHits = response.totalHits;
         totalImages += getFotoApi.per_page;
 

@@ -13,7 +13,7 @@ export default class getFotoApi {
         async fetchFoto() {
             const findParams=new URLFindParams(
                 {
-                    key: this.#KEY_API,
+                    key: this.KEY_API,
                     q: this.searchQuery,
                     image_type: 'photo',
                     orientation: 'horizontal',
