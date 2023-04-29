@@ -3,8 +3,8 @@ import './css/styles.css';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 import { Notify } from "notiflix/build/notiflix-notify-aio";
-import getFotoApi from "./js/api-service";
-import { renderFoto, galleryList } from "./js/render-images";
+import getFotoApi from "./js/pixabay-api";
+import { renderFoto, galleryList } from "./js/markup-images";
 
 const form = document.querySelector(".search-form");
 const loadMoreBtn = document.querySelector(".load-more");
