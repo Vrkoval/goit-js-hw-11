@@ -48,7 +48,7 @@ async function submitForm(e) {
 
         Notify.info(`Hooray! We found ${totalHits} images.`,
             {
-                timeout: 4000,
+                timeout: 2000,
                 width: "400px",
                 fontSize: "18px",
                 position: "right-top",
@@ -81,7 +81,7 @@ async function onLoadMore(searchQuery) {
 
             Notify.failure("We're sorry, but you've reached the end of search results!",
                 {
-                    timeout: 4000,
+                    timeout: 2000,
                     width: "400px",
                     fontSize: "18px",
                     position: "right-top",
@@ -126,7 +126,7 @@ function enterWithoutRequest() {
 function errorMessage() {
     Notify.failure("Sorry, there are no images matching your search query. Please try again!",
         {
-            timeout: 4000,
+            timeout: 2000,
             width: "400px",
             fontSize: "18px",
             position: "right-top",
