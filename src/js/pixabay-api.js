@@ -27,6 +27,7 @@ export default class getFotoApi {
                 const response= await axios.get(URL)
                 this.incrementPage()
                 return response.data
+                console.log(response.data.hits);
             } catch(error) {
                 Notify.failure('A request error ocurred!',
                 {
