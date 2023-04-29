@@ -11,7 +11,7 @@ export default class getFotoApi {
         }
         
         async fetchFoto() {
-            const findParams=new URLFindParams(
+            const findParams=new URLSearchParams(
                 {
                     key: KEY_API,
                     q: this.searchQuery,

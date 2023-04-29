@@ -4,7 +4,7 @@ body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 12px;
 }
-.hidden{
+/* .hidden{
     position: absolute;
     margin: -1px;
     padding: 0;
@@ -12,7 +12,7 @@ body{
     height: 1px;
     border: 0;
     overflow: hidden;
-}
+} */
 a{
     text-decoration: none;
 }
@@ -48,7 +48,7 @@ a{
 
 .photo-card:hover,
 .photo-card:focus {
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 
 .gallery img {
