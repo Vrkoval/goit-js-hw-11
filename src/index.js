@@ -70,7 +70,7 @@ async function submitForm(e) {
 
 async function onLoadMore(searchQuery) {
     try {
-        const response = await toGetFotoApi.fetchImages(searchQuery);
+        const response = await toGetFotoApi.fetchFoto(searchQuery);
         totalImages += toGetFotoApi.per_page;
 
         if (totalImages >= response.totalHits) {
